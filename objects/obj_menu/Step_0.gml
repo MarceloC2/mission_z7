@@ -1,7 +1,9 @@
 /// @description Navegação do Menu
 //funcionando sem o script controle de audio
 
-audio_play_sound(snd_music_menu, 2, true);
+if (global.musica && !audio_is_playing(snd_music_menu)) {
+    audio_play_sound(snd_music_menu, 2, true);
+}
 
 
 if (keyboard_check_pressed(vk_down)) {

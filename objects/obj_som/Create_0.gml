@@ -14,27 +14,40 @@ music_menu = new AudioPlayLoop(snd_music_menu, AU_TYPE_MUSIC,2000);
 */
 
 
-// Funções para alternar som e música
+// Alternar som
 function alternar_som() {
     global.som = !global.som;
-    global.status_som = "Som " + (global.som ? "ativado" : "desativado");
+    if (global.som) {
+        audio_play_sound(snd_select_menu, 1, false);
+    } else {
+        audio_stop_all();
+	}
 }
 
+// Alternar música
 function alternar_musica() {
     global.musica = !global.musica;
-    show_message("Música " + (global.musica ? "ativada" : "desativada"));
+    if (global.musica) {
+        if (!audio_is_playing(snd_music_menu)) {
+            audio_play_sound(snd_music_menu, 2, true);
+        }
+    } else {
+        audio_stop_sound(snd_music_menu);
+    }
 }
 
-// Funções para ajustar volume
-function ajustar_volume_som(_valor) {
-    global.volume_som = clamp(_valor, 0, 1);
+// Ajustar volume do som
+function ajustar_volume_som(_volume) {
+    global.volume_som = clamp(_volume, 0, 1);
     audio_master_gain(global.volume_som);
 }
 
-function ajustar_volume_musica(_valor) {
-    global.volume_musica = clamp(_valor, 0, 1);
-    //audio_music_gain(global.volume_musica);
+// Ajustar volume da música
+function ajustar_volume_musica(_volume) {
+    global.volume_musica = clamp(_volume, 0, 1);
+    audio_sound_gain(snd_music_menu, global.volume_musica, 0);
 }
+
 
 
 
