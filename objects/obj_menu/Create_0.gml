@@ -1,10 +1,10 @@
 // Inicializando variáveis globais
-/*
+
 global.som = true;
 global.musica = true;
 global.volume_som = 1; // Volume do som (0 a 1)
 global.volume_musica = 1; // Volume da música (0 a 1)
-*/
+
 
 
 // Criando as estruturas do menu

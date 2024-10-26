@@ -3,6 +3,7 @@
 
 audio_play_sound(snd_music_menu, 2, true);
 
+
 if (keyboard_check_pressed(vk_down)) {
     navegar_menu(1);
 }
@@ -64,22 +65,22 @@ function executar_acao_menu() {
             game_end();
             break;
         case 6:
-            obj_som_musica.alternar_som();
+            obj_som.alternar_som();
             break;
         case 7:
-            obj_som_musica.alternar_musica();
+            obj_som.alternar_musica();
             break;
         case 8:
-            obj_som_musica.ajustar_volume_som(global.volume_som + 0.1);
+            obj_som.ajustar_volume_som(global.volume_som + 0.1);
             break;
         case 9:
-            obj_som_musica.ajustar_volume_som(global.volume_som - 0.1);
+            obj_som.ajustar_volume_som(global.volume_som - 0.1);
             break;
         case 10:
-            obj_som_musica.ajustar_volume_musica(global.volume_musica + 0.1);
+            obj_som.ajustar_volume_musica(global.volume_musica + 0.1);
             break;
         case 11:
-            obj_som_musica.ajustar_volume_musica(global.volume_musica - 0.1);
+            obj_som.ajustar_volume_musica(global.volume_musica - 0.1);
             break;
         case 12:
             esconder_configuracoes();
