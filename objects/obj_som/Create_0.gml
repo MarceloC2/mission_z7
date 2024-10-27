@@ -14,17 +14,24 @@ music_menu = new AudioPlayLoop(snd_music_menu, AU_TYPE_MUSIC,2000);
 */
 
 
-// Alternar som
+// Função para tocar música específica
+function tocar_musica(_musica) {
+    if (!audio_is_playing(_musica)) {
+        audio_play_sound(_musica, 2, true);
+    }
+}
+
+// Função para alternar som
 function alternar_som() {
     global.som = !global.som;
     if (global.som) {
         audio_play_sound(snd_select_menu, 1, false);
     } else {
         audio_stop_all();
-	}
+    }
 }
 
-// Alternar música
+// Função para alternar música
 function alternar_musica() {
     global.musica = !global.musica;
     if (global.musica) {
@@ -36,16 +43,28 @@ function alternar_musica() {
     }
 }
 
-// Ajustar volume do som
+// Função para ajustar volume do som
 function ajustar_volume_som(_volume) {
     global.volume_som = clamp(_volume, 0, 1);
     audio_master_gain(global.volume_som);
 }
 
-// Ajustar volume da música
+// Função para ajustar volume da música
 function ajustar_volume_musica(_volume) {
     global.volume_musica = clamp(_volume, 0, 1);
     audio_sound_gain(snd_music_menu, global.volume_musica, 0);
+}
+
+// Função para verificar se qualquer áudio está tocando
+function verificar_status_audio() {
+    // Supondo que você tenha uma array global contendo todos os sons
+    var sounds_array = [snd_music_menu, snd_select_menu, /* outros sons */];
+    for (var i = 0; i < array_length(sounds_array); i++) {
+        if (audio_is_playing(sounds_array[i])) {
+            return true;
+        }
+    }
+    return false;
 }
 
 

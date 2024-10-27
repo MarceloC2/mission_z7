@@ -1,8 +1,8 @@
 /// @description Navegação do Menu
 //funcionando sem o script controle de audio
 
-if (global.musica && !audio_is_playing(snd_music_menu)) {
-    audio_play_sound(snd_music_menu, 2, true);
+if (global.musica) {
+    obj_som.tocar_musica(snd_music_menu);
 }
 
 
@@ -36,7 +36,6 @@ function navegar_menu(_direcao) {
     }
 }
 
-
 function mostrar_configuracoes() {
    menu = menu_configuracao;
    atual = 0;
@@ -58,33 +57,30 @@ function executar_acao_menu() {
             room_goto(rm_sobrevivencia);
             break;
         case 3:
-            mostrar_configuracoes();
-            break;
-        case 4:
             show_message("Créditos: Equipe Cest");
             break;
-        case 5:
+        case 4:
             game_end();
             break;
-        case 6:
+        case 5:
             obj_som.alternar_som();
             break;
-        case 7:
+        case 6:
             obj_som.alternar_musica();
             break;
-        case 8:
+        case 7:
             obj_som.ajustar_volume_som(global.volume_som + 0.1);
             break;
-        case 9:
+        case 8:
             obj_som.ajustar_volume_som(global.volume_som - 0.1);
             break;
-        case 10:
+        case 9:
             obj_som.ajustar_volume_musica(global.volume_musica + 0.1);
             break;
-        case 11:
+        case 10:
             obj_som.ajustar_volume_musica(global.volume_musica - 0.1);
             break;
-        case 12:
+        case 11:
             esconder_configuracoes();
             break;
     }
