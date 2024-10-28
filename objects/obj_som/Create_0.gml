@@ -58,9 +58,9 @@ function ajustar_volume_musica(_volume) {
 // Função para verificar se qualquer áudio está tocando
 function verificar_status_audio() {
     // Supondo que você tenha uma array global contendo todos os sons
-    var sounds_array = [snd_music_menu, snd_select_menu, /* outros sons */];
-    for (var i = 0; i < array_length(sounds_array); i++) {
-        if (audio_is_playing(sounds_array[i])) {
+    var _sounds_array = [snd_music_menu, snd_select_menu, /* outros sons */];
+    for (var _i = 0; _i < array_length(_sounds_array); _i++) {
+        if (audio_is_playing(_sounds_array[_i])) {
             return true;
         }
     }

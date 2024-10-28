@@ -1,73 +1,30 @@
-/// @description Desenho do Menu
 // Desenhando todos os itens do menu
-/*
-var _largura_tela = display_get_gui_width();
-var _altura_tela = display_get_gui_height();
-var _altura_item = 35;
-var _y_inicial = _altura_tela / 1.30 - (array_length(menu) * _altura_item) / 2;
+var _largura_tela = global.largura_tela;
+var _altura_tela = global.altura_tela;
+var _altura_item = global.altura_item;
+var _y_inicial = global.y_inicial;
 
-for (var i = 0; i < array_length(menu); i++) {
-    var _cor = (i == atual) ? c_red : c_white;
-    draw_set_font(fnt_menu);
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_middle);
-    draw_set_color(_cor);
-    draw_text(_largura_tela / 2, _y_inicial + _altura_item * i, menu[i].texto);
-    draw_set_color(c_white);
-}
-*/
-
-/// @description Desenho do Menu
-// Desenhando todos os itens do menu
-var _largura_tela = display_get_gui_width();
-var _altura_tela = display_get_gui_height();
-var _altura_item = 35;
-var _y_inicial = _altura_tela / 1.30 - (array_length(menu) * _altura_item) / 2;
-
+// Desenhar todos os itens do menu
 for (var _i = 0; _i < array_length(menu); _i++) {
-    var _cor = (_i == atual) ? c_black : c_purple;
-    draw_set_font(fnt_menu);
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_middle);
-	draw_roundrect_colour(_largura_tela / 2 - 100, _y_inicial + _altura_item * _i - 14, _largura_tela / 2 + 100, _y_inicial + _altura_item * _i + 14, c_black, c_purple, false);
-	
-	
-    // Desenhar contorno
-    draw_set_color(c_lime); // Cor do contorno
-    for (var _ox = -1; _ox <= 4; _ox++) {
-        for (var _oy = -1; _oy <= 1; _oy++) {
-            if (_ox != 0 || _oy != 0) {
-                draw_text(_largura_tela / 2 + _ox, _y_inicial + _altura_item * _i + _oy, menu[_i].texto);
-				//draw_rectangle(_largura_tela / 2 - 100, _y_inicial + _altura_item * _i - 14, _largura_tela / 2 + 100, _y_inicial + _altura_item * _i + 14, true);
-				//draw_roundrect_colour(_largura_tela / 2 - 100, _y_inicial + _altura_item * _i - 14, _largura_tela / 2 + 100, _y_inicial + _altura_item * _i + 14, c_black, c_purple, false);
-				
-            }
-        }
-    }
-
-    // Desenhar texto
-    draw_set_color(_cor);
-    draw_text(_largura_tela / 2, _y_inicial + _altura_item * _i, menu[_i].texto);
+    var _index = (_i == atual) ? 1 : 0; // Muda para o índice 1 se estiver selecionado, senão usa o índice 0
+    
+    // Desenhar sprite com índice
+    draw_sprite(menu[_i].sprite, _index, _largura_tela / 3.3, _y_inicial + _altura_item * _i + 110);
 }
 
 
+// Desenhar barras de volume somente se as opções de volume estiverem visíveis
+if (menu == menu_configuracao) {
+    /*
+	O controle de posicionamento das barras de volume e som são configurado no Step.
+	(variaveis globais barra de musica e barra de som)
+	*/
+    //sombra da barra
+    //draw_roundrect_colour(global.barra_som_x +25, global.barra_som_y, global.barra_som_x + global.volume_som_barra_largura - 29, global.barra_som_y + 12, c_grey, c_grey, false);
+    //draw_roundrect_colour(global.barra_musica_x +25, global.barra_musica_y, global.barra_musica_x + global.volume_musica_barra_largura -29, global.barra_musica_y + 12, c_gray, c_gray, false);
+	
+	//desenho da barra
+    draw_roundrect_colour(global.barra_som_x + 25, global.barra_som_y, (global.barra_som_x + global.volume_som_barra_largura * global.volume_som)-29, global.barra_som_y + 12, c_black, c_blue, false);
+	draw_roundrect_colour(global.barra_musica_x +25, global.barra_musica_y, (global.barra_musica_x + global.volume_musica_barra_largura * global.volume_musica) -29, global.barra_musica_y + 12, c_black, c_blue, false);
+}
 
-// Desenhar barra de volume do som
-var _largura_barra_som = 200;
-var _altura_barra = 12;
-var _x_barra_som = (_largura_tela - _largura_barra_som) / 2;
-var _y_barra_som = _y_inicial + _altura_item * array_length(menu) + 40;
-draw_set_color(c_black);
-draw_roundrect(_x_barra_som, _y_barra_som, _x_barra_som + _largura_barra_som, _y_barra_som + _altura_barra, false);
-draw_set_color(c_green);
-draw_roundrect(_x_barra_som, _y_barra_som, _x_barra_som + _largura_barra_som * global.volume_som, _y_barra_som + _altura_barra, false);
-/*
-// Desenhar barra de volume da música
-var _x_barra_musica = (_largura_tela - _largura_barra_som) / 2;
-var _y_barra_musica = _y_barra_som + _altura_barra + 20;
-draw_set_color(c_black);
-draw_roundrect(_x_barra_musica, _y_barra_musica, _x_barra_musica + _largura_barra_som, _y_barra_musica + _altura_barra, false);
-draw_set_color(c_blue);
-draw_roundrect(_x_barra_musica, _y_barra_musica, _x_barra_musica + _largura_barra_som * global.volume_musica, _y_barra_musica + _altura_barra, false);
-
-*/

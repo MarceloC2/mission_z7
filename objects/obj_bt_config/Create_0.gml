@@ -5,3 +5,4 @@ x = 50;
 y = 600;
 
 image_alpha = 1;
+
