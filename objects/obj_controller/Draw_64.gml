@@ -1,8 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 // Define o tamanho base da GUI
-var _base_width = 1280;
-var _base_height = 720;
+var _base_width = 540;
+var _base_height = 960;
 
 // Define a GUI inicial com o tamanho base
 display_set_gui_size(_base_width, _base_height);
