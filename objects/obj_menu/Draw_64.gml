@@ -26,7 +26,7 @@ function desenhar_menu() {
             var _index = (_i == atual) ? 1 : 0; // Muda para o índice 1 se estiver selecionado
 			if (_i == 5){
 			// ajusta o frame do spr_icon_audio conforme o estado do som e música.
-			if (!global.som || !global.musica) {
+			if (!global.master) {
 			    draw_sprite(menu[_i].sprite, 2, menu[_i].pos_x, menu[_i].pos_y);
 			} else {
 			    draw_sprite(menu[_i].sprite, 0, menu[_i].pos_x, menu[_i].pos_y);

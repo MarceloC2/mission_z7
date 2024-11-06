@@ -1,10 +1,5 @@
 // Inicializando variáveis globais
-global.som = true;
-global.musica = true;
-global.volume_som = 1; // Volume do som (0 a 1)
-global.volume_musica = 1; // Volume da música (0 a 1)
-global.volume_som_barra_largura = 200;
-global.volume_musica_barra_largura = 200;
+
 
 // Criando as estruturas do menu com sprites
 opcao1 = { sprite: spr_missao, id: 1, visivel: true, pos_x: 145, pos_y: 500 };

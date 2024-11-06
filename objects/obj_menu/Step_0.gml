@@ -59,42 +59,6 @@ for (var _i = 0; _i < array_length(menu); _i++) {
     }
 }
 
-/*
-// Navegar pelo menu com teclas: setas e enter
-if (keyboard_check_pressed(vk_down)) {
-    navegar_menu(1);
-}
-if (keyboard_check_pressed(vk_up)) {
-    navegar_menu(-1);
-}
-
-
-function navegar_menu(_direcao) {
-    var _start = atual;
-    var _i = 0;
-    while (_i < array_length(menu)) {
-        atual = (_start + _direcao + _i + array_length(menu)) % array_length(menu);
-        if (menu[atual].visivel) {
-            break;
-        }
-        _i++;
-    }
-    if (global.som) {
-        audio_play_sound(snd_select_menu, 1, false);
-    }
-}
-
-
-
-// Confirmar a opção com Enter
-if (keyboard_check_pressed(vk_enter)) {
-    if (global.som) {
-        audio_play_sound(snd_select_menu, 1, false);
-    }
-    executar_acao_menu();
-}
-*/
-
 
 // Verificar ajuste de volume pelo mouse ou toque na barra de som (específico para configuração)
 if (menu == menu_configuracao) {
@@ -152,6 +116,10 @@ function executar_acao_menu() {
             room_goto(rm_missao1)
             break;
         case 2:
+			if (global.som){
+				obj_som.toggle_musica(snd_music_menu,"pause");
+				obj_som.toggle_musica(snd_music_sobrevivencia,"play");
+			}
             room_goto(rm_sobrevivencia);
             break;
         case 3:
@@ -165,35 +133,32 @@ function executar_acao_menu() {
             break;
         case 6:
 			 if (global.som && global.musica) {
-                show_message("Pausando - Som: " + string(global.som) + "\nMúsica: " + string(global.musica));
+                //show_message("Pausando - Som: " + string(global.som) + "\nMúsica: " + string(global.musica));
+				show_message("Modo Silencioso Ativado!");
                 obj_som.toggle_som(snd_select_menu, "pause");
                 obj_som.toggle_musica(snd_music_menu, "pause");
                 global.som = false;
                 global.musica = false;
+				global.master = false;
 
                 // Atualizar frame do icon_br_som
-                spr_icon_audio.image_index = 3; // Supondo que 2 é o frame desejado
+                //spr_icon_audio.image_index = 3; // Supondo que 2 é o frame desejado
             } else {
-                show_message("Reproduzindo - Som: " + string(global.som) + "\nMúsica: " + string(global.musica));
+                show_message("Modo Silêncioso Desativado!");
                 obj_som.toggle_som(snd_select_menu, "play");
                 obj_som.toggle_musica(snd_music_menu, "play");
                 global.som = true;
                 global.musica = true;
+				global.master = true;
 
                 // Atualizar frame do icon_br_som
-                spr_icon_audio.image_index = 0; // Supondo que 1 é o frame desejado
+                //spr_icon_audio.image_index = 0; // Supondo que 1 é o frame desejado
             }
             break;
-        case 7:
-            
-            break;
-        case 8:
-            
-            break;
+        
         case 9:
             esconder_configuracoes();
             break;
-		
         
     }
 }

@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_select_menu.mp3",
-  "type":0,
-  "volume":0.35,
+  "type":1,
+  "volume":1.0,
 }
