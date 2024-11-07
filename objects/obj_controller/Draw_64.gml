@@ -1,6 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 // Define o tamanho base da GUI
+/*
 var _base_width = 540;
 var _base_height = 960;
 
@@ -34,3 +35,4 @@ if (_aspect_ratio > 1) {
 var _scale = min(display_get_width() / _gui_width, display_get_height() / _gui_height);
 display_set_gui_maximize(1);
 display_set_gui_size(display_get_width() / _scale, display_get_height() / _scale);
+*/

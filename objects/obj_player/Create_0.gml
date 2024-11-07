@@ -10,4 +10,3 @@ randomize();
 pode_disparar = true;
 nave_selecionada = false;
 
-

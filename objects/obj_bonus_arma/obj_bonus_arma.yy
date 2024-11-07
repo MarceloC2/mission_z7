@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mais",
-    "path":"sprites/spr_mais/spr_mais.yy",
+    "name":"spr_bonus_arma",
+    "path":"sprites/spr_bonus_arma/spr_bonus_arma.yy",
   },
   "spriteMaskId":null,
   "visible":true,

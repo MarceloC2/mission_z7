@@ -64,8 +64,11 @@ if (device_mouse_check_button_pressed(0, mb_left)) {
 if (device_mouse_check_button(0, mb_left) && nave_selecionada) {
     var touch_x = device_mouse_x(0);
     var touch_y = device_mouse_y(0);
-    x = touch_x;
-    y = touch_y;
+    
+    // Manter a nave dentro dos limites da tela
+    x = clamp(touch_x, sprite_width / 2, display_get_width() - sprite_width / 2);
+    y = clamp(touch_y, sprite_height / 2, 950); //display_get_height() - sprite_height / 2
+    
     global.pausado = false; // Despausa o jogo quando tocar na tela
 
     // Verificar disparo contínuo com o toque na tela
@@ -76,6 +79,7 @@ if (device_mouse_check_button(0, mb_left) && nave_selecionada) {
     }
 } else if (!device_mouse_check_button(0, mb_left)) {
     nave_selecionada = false;
+	//show_message("Altura da Tela:" + string(display_get_height()) + " Largura da Tela: " + string(display_get_width()) );
 }
 
 // Desacelerar jogo quando não houver toque
@@ -84,8 +88,6 @@ if (!device_mouse_check_button(0, mb_left)) {
 } else {
     global.jogo_lento = false;
 }
-
-
 
 
 

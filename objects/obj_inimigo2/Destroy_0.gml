@@ -1,9 +1,11 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
+// Adicionar pontos ao destruir inimigo
+global.pontos += 2;  // Exemplo: 20 pontos por inimigo destruído
+
 // Criando partículas
 repeat(random_range(10, 100)) {
     instance_create_layer(x, y, layer, obj_particula);
 }
+
 
 // Atualizar pontuação ou outro feedback
 global.inimigos_destruidos += 1;
