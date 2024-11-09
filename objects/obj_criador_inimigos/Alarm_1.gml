@@ -2,8 +2,20 @@
 // Você pode escrever seu código neste editor
 if (!global.pausado) {
     global.level += 0.3;
+}else{
+	exit;
 }
-alarm[1] = 300;
+
+
+
+// Desacelerar criação de inimigos quando não houver toque
+if (global.jogo_lento) {
+    alarm[1] = 1200;
+} else {
+    alarm[1] = 300;
+}
+
+
 
 /*
 if (!global.pausado) {

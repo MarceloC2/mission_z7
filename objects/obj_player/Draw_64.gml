@@ -1,5 +1,6 @@
 // Definir a cor e o alinhamento do texto
 draw_set_color(c_white);
+//draw_set_font(fnt_menu)
 draw_set_halign(fa_left);
 
 // Desenhar a pontuação no canto superior esquerdo

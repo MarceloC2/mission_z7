@@ -3,6 +3,10 @@
 
 global.pausado = !global.pausado;
 
+obj_som.toggle_musica(snd_music_menu,"play");
+obj_som.toggle_musica(snd_music_sobrevivencia,"pause");
+room_goto(rm_menu)
+
 
 
 

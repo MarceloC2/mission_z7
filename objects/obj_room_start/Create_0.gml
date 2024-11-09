@@ -8,6 +8,7 @@ global.inimigos_destruidos = 0;
 global.pontos = 0;  // Inicializar pontos
 
 
+
 /*
 // Inicializa objetos e variáveis necessárias no início da sala
 instance_create_layer(0, 0, "Controladores", obj_wave_manager);

@@ -4,8 +4,9 @@
 
 global.level = 1;
 
-alarm[0] = 30;
-alarm[1] = 300; // Reajustar conforme necessário
+
+alarm[0] = 3;
+alarm[1] = 3; // Reajustar conforme necessário
 grupo_inimigos = 0;
 subgrupo_inimigos = 0;
 

@@ -5,10 +5,10 @@ if (global.musica) {
 }
 
 // No evento Step
-global.largura_tela = display_get_gui_width();
-global.altura_tela = display_get_gui_height();
+global.largura_tela = room_width; // display_get_gui_width();
+global.altura_tela = room_height; // display_get_gui_height();
 global.altura_item = 70; // Altura de cada item do menu
-global.y_inicial = global.altura_tela / 1.8 - (array_length(menu) * global.altura_item) / 2;
+global.y_inicial =  global.altura_tela / 1.8 - (array_length(menu) * global.altura_item) / 2;
 
 function verificar_interacao(_mouse_x, _mouse_y) {
     for (var _i = 0; _i < array_length(menu); _i++) {
@@ -62,8 +62,8 @@ for (var _i = 0; _i < array_length(menu); _i++) {
 
 // Verificar ajuste de volume pelo mouse ou toque na barra de som (específico para configuração)
 if (menu == menu_configuracao) {
-    var _mouse_x = device_mouse_x_to_gui(0);
-    var _mouse_y = device_mouse_y_to_gui(0);
+    //var _mouse_x = device_mouse_x_to_gui(0);
+    //var _mouse_y = device_mouse_y_to_gui(0);
 
     global.barra_som_x = (global.largura_tela - global.volume_som_barra_largura) / 2;
     global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 85;
@@ -116,10 +116,11 @@ function executar_acao_menu() {
             room_goto(rm_missao1)
             break;
         case 2:
-			if (global.som){
+			if (global.musica){
 				obj_som.toggle_musica(snd_music_menu,"pause");
 				obj_som.toggle_musica(snd_music_sobrevivencia,"play");
 			}
+			
             room_goto(rm_sobrevivencia);
             break;
         case 3:
@@ -139,7 +140,7 @@ function executar_acao_menu() {
                 obj_som.toggle_musica(snd_music_menu, "pause");
                 global.som = false;
                 global.musica = false;
-				global.master = false;
+				
 
                 // Atualizar frame do icon_br_som
                 //spr_icon_audio.image_index = 3; // Supondo que 2 é o frame desejado
@@ -149,7 +150,7 @@ function executar_acao_menu() {
                 obj_som.toggle_musica(snd_music_menu, "play");
                 global.som = true;
                 global.musica = true;
-				global.master = true;
+				
 
                 // Atualizar frame do icon_br_som
                 //spr_icon_audio.image_index = 0; // Supondo que 1 é o frame desejado

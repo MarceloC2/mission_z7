@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 meux = irandom(5);
 direction = 270;
-vida = 1;  // Resistência: precisa de 2 tiros para ser destruído
+vida = 2;  // Resistência: precisa de 2 tiros para ser destruído
 alarm[0] = 60;  // Temporizador para disparo
 
 

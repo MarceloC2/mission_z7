@@ -13,7 +13,19 @@ if (!global.pausado) {
         subgrupo_inimigos = 0;
     }
 }
-alarm[0] = 30;
+
+
+
+
+// Desacelerar criação de inimigos quando não houver toque
+if (global.jogo_lento) {
+    alarm[0] = 90;
+} else {
+    alarm[0] = 30;
+}
+
+
+
 
 
 

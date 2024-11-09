@@ -2,9 +2,9 @@
 // Você pode escrever seu código neste editor
 if (obstaculos_restantes > 0) {
     // Criar um subgrupo de obstáculos
-    for (var i = 0; i < subgrupo_tamanho; i++) {
-        var tipo_obstaculo = choose(obj_asteroide, obj_bola_fogo, obj_bola_gelo);
-        instance_create_layer(irandom_range(50, display_get_width() - 50), -50, "Obstaculos", tipo_obstaculo);
+    for (var _i = 0; _i < subgrupo_tamanho; _i++) {
+        var _tipo_obstaculo = choose(obj_asteroide, obj_bola_fogo, obj_bola_gelo);
+        instance_create_layer(irandom_range(50, display_get_width() - 50), -50, "Obstaculos", _tipo_obstaculo);
     }
     obstaculos_restantes -= subgrupo_tamanho;
 

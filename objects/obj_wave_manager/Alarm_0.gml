@@ -1,20 +1,23 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+if (global.pausado) {
+    exit;
+}
 if (estado == "onda_inimigos") {
     if (inimigos_restantes > 0) {
         // Criar um subgrupo de inimigos com espaçamento
-        var num_inimigos = min(subgrupo_tamanho, inimigos_restantes);
-        for (var i = 0; i < num_inimigos; i++) {
+        var _num_inimigos = min(subgrupo_tamanho, inimigos_restantes);
+        for (var _i = 0; _i < _num_inimigos; _i++) {
             // Gerar posição aleatória com espaçamento mínimo
-            var pos_x = irandom_range(50, display_get_width() - 50);
-            var pos_y = -50 - (i * 60); // Espaçamento vertical entre inimigos
+            var _pos_x = irandom_range(50, display_get_width() - 50);
+            var _pos_y = -50 - (_i * 60); // Espaçamento vertical entre inimigos
 
             // Verificar se a posição está livre
-            if (place_free(pos_x, pos_y)) {
-                instance_create_layer(pos_x, pos_y, "Inimigos", obj_inimigo1);
+            if (place_free(_pos_x, _pos_y)) {
+                instance_create_layer(_pos_x, _pos_y, "Inimigos", obj_inimigo1);
             }
         }
-        inimigos_restantes -= num_inimigos;
+        inimigos_restantes -= _num_inimigos;
     } else {
         // Transição para obstáculos
         estado = "obstaculos";
@@ -23,9 +26,9 @@ if (estado == "onda_inimigos") {
 } else if (estado == "obstaculos") {
     if (obstaculos_restantes > 0) {
         // Criar um subgrupo de obstáculos
-        for (var i = 0; i < subgrupo_tamanho / 2; i++) {
-            var tipo_obstaculo = choose(obj_asteroide, obj_bola_fogo, obj_bola_gelo);
-            instance_create_layer(irandom_range(50, display_get_width() - 50), -50, "Obstaculos", tipo_obstaculo);
+        for (var _i = 0; _i < subgrupo_tamanho / 2; _i++) {
+            var _tipo_obstaculo = choose(obj_asteroide, obj_bola_fogo, obj_bola_gelo);
+            instance_create_layer(irandom_range(50, display_get_width() - 50), -50, "Obstaculos", _tipo_obstaculo);
         }
         obstaculos_restantes -= subgrupo_tamanho / 2;
     } else {
@@ -38,12 +41,12 @@ if (estado == "onda_inimigos") {
 } else if (estado == "onda_inimigos_forte") {
     if (inimigos_restantes > 0) {
         // Criar um subgrupo de inimigos mais fortes
-        var num_inimigos = min(subgrupo_tamanho, inimigos_restantes);
-        for (var i = 0; i < num_inimigos; i++) {
-            var pos_x = irandom_range(50, display_get_width() - 50);
-            var pos_y = -50 - (i * 60); // Espaçamento vertical entre inimigos
-            if (place_free(pos_x, pos_y)) {
-                instance_create_layer(pos_x, pos_y, "Inimigos", obj_inimigo2);
+        var _num_inimigos = min(subgrupo_tamanho, inimigos_restantes);
+        for (var _i = 0; _i < _num_inimigos; _i++) {
+            var _pos_x = irandom_range(50, display_get_width() - 50);
+            var _pos_y = -50 - (_i * 60); // Espaçamento vertical entre inimigos
+            if (place_free(_pos_x, _pos_y)) {
+                instance_create_layer(_pos_x, _pos_y, "Inimigos", obj_inimigo2);
             }
         }
         inimigos_restantes -= num_inimigos;

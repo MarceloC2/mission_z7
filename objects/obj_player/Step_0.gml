@@ -49,25 +49,29 @@ if (global.pausado) {
     exit;
 }
 
+// Define a margem adicional para aumentar a área de toque
+var _padding = 70; // Valor determina a atea de toque da nava do player
+
 // Verificar se a nave foi selecionada
 if (device_mouse_check_button_pressed(0, mb_left)) {
-    var touch_x = device_mouse_x(0);
-    var touch_y = device_mouse_y(0);
-    if (point_in_rectangle(touch_x, touch_y, x - sprite_width / 2, y - sprite_height / 2, x + sprite_width / 2, y + sprite_height / 2)) {
+    var _touch_x = device_mouse_x(0);
+    var _touch_y = device_mouse_y(0);
+    if (point_in_rectangle(_touch_x, _touch_y, x - sprite_width / 2 , y - sprite_height / 2 - _padding, x + sprite_width / 2 , y + sprite_height / 2 + _padding)) {
         nave_selecionada = true;
     } else {
         nave_selecionada = false;
     }
 }
 
+
 // Se a nave estiver selecionada, ela se move com o toque
 if (device_mouse_check_button(0, mb_left) && nave_selecionada) {
-    var touch_x = device_mouse_x(0);
-    var touch_y = device_mouse_y(0);
+    var _touch_x = device_mouse_x(0);
+    var _touch_y = device_mouse_y(0);
     
     // Manter a nave dentro dos limites da tela
-    x = clamp(touch_x, sprite_width / 2, display_get_width() - sprite_width / 2);
-    y = clamp(touch_y, sprite_height / 2, 950); //display_get_height() - sprite_height / 2
+    x = clamp(_touch_x, sprite_width / 2 - 40, room_width - sprite_width / 2+40);
+    y = clamp(_touch_y, sprite_height / 2, room_height); //display_get_height() - sprite_height / 2
     
     global.pausado = false; // Despausa o jogo quando tocar na tela
 
@@ -79,7 +83,7 @@ if (device_mouse_check_button(0, mb_left) && nave_selecionada) {
     }
 } else if (!device_mouse_check_button(0, mb_left)) {
     nave_selecionada = false;
-	//show_message("Altura da Tela:" + string(display_get_height()) + " Largura da Tela: " + string(display_get_width()) );
+	//show_message("Altura da Tela:" + string(room_width) + " Largura da Tela: " + string(room_height) );
 }
 
 // Desacelerar jogo quando não houver toque
@@ -93,7 +97,7 @@ if (!device_mouse_check_button(0, mb_left)) {
 
 
 //criando rastro
-//instance_create_layer(x,y, layer, obj_player1_rastro);
+instance_create_layer(x,y, layer, obj_player_rastro);
 
 /*
 // Verificar se o jogo está pausado e se não está tocando na tela
