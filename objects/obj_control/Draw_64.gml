@@ -1,5 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+
+/*
 if (global.pausado) {
     draw_set_alpha(0.5);
     draw_set_color(c_black);
@@ -9,3 +11,4 @@ if (global.pausado) {
     draw_set_color(c_red);
     draw_text(display_get_width() / 7, display_get_height() / 2, "Pausado");
 }
+*/

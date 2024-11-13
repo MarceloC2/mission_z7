@@ -3,7 +3,7 @@ instance_create_layer(0, 0, "Controladores", obj_wave_manager);
 
 // Inicializar variáveis globais
 global.jogo_lento = false;
-global.player_vida = 10;  // Vida inicial do jogador
+global.vida_player = 1;  // Vida começa com 100%
 global.inimigos_destruidos = 0;
 global.pontos = 0;  // Inicializar pontos
 

@@ -1,9 +1,9 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-meux = irandom(5);
+meux = irandom(4);
 direction = 270;
 vida = 2;  // Resistência: precisa de 2 tiros para ser destruído
-alarm[0] = 60;  // Temporizador para disparo
+alarm[0] = 80;  // Temporizador para disparo
 
 
 

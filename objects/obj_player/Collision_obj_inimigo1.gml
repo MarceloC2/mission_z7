@@ -1,10 +1,13 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-global.player_vida -= 1;
-instance_destroy(other);  // Destruir o tiro do inimigo
+//Perder vida se não estiver com escudo
+if (!global.escudo_ativo) {
+	global.vida_player -= 0.1;
+	}
+instance_destroy(other);  // Destruir o obstáculo
 
 // Verificar se o jogador ainda tem vida
-if (global.player_vida <= 0) {
+if (global.vida_player <= 0) {
     show_gameover_screen();  // Mostrar tela de Game Over
 	//Teste abaixo
 	obj_som.toggle_musica(snd_game_over,"play");

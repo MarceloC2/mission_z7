@@ -1,3 +1,4 @@
+/*
 if (global.pausado) {
     exit;
 }
@@ -28,3 +29,4 @@ if (onda_atual == 2 && inimigos_restantes > 0) {
 
 alarm[0] = 60;  // Reativar alarme
 
+*/

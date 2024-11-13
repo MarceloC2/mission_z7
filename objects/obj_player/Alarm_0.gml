@@ -1,7 +1,4 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
 pode_disparar = true;
-
-instance_create_layer(x, y, layer, obj_player_rastro);
+//instance_create_layer(x, y, layer, obj_player_rastro);
 // Reativando alarme
 alarm[0] = 10;

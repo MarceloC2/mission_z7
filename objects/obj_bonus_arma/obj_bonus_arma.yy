@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bonus_arma",
-    "path":"sprites/spr_bonus_arma/spr_bonus_arma.yy",
+    "name":"spr_powerup_firepower",
+    "path":"sprites/spr_powerup_firepower/spr_powerup_firepower.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_icon_audio",
-    "path":"sprites/spr_icon_audio/spr_icon_audio.yy",
+    "name":"spr_vida",
+    "path":"sprites/spr_vida/spr_vida.yy",
   },
   "spriteMaskId":null,
   "visible":true,

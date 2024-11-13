@@ -17,11 +17,11 @@ vida = 1;  // Vida do inimigo (1 tiro para destruir)
 alarm[0] = 10;
 */
 
-meux = irandom(5);
+meux = irandom(4);
 direction = 270;
 vida = 1;  // Vida do inimigo (1 tiro para destruir) 
-speed = 1;  // Ajustar a velocidade inicial aqui (por exemplo, 2) para aumentar veloc conforme level speed = 1 + global.level;
-alarm[0] = 10;
+//speed = 1;  // Ajustar a velocidade inicial aqui (por exemplo, 2) para aumentar veloc conforme level speed = 1 + global.level;
+//alarm[0] = 10;
 
 
 

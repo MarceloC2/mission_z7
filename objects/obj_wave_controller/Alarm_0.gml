@@ -1,3 +1,5 @@
+/*
+
 if (global.pausado) {
     exit;
 }
@@ -9,3 +11,4 @@ if (onda_atual == 2 && inimigos_restantes > 0) {
     inimigos_restantes -= subgrupo_tamanho;
     alarm[0] = 60;  // Reativar alarme
 }
+*/

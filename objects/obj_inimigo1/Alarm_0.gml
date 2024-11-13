@@ -8,4 +8,4 @@ if (global.pausado) {
 
 instance_create_layer(x, y, layer, obj_inimigo1_rastro);
 // Reativando alarme
-alarm[0] = 10;
+alarm[0] = 60;

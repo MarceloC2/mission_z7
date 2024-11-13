@@ -27,7 +27,7 @@ if (estado == "onda_inimigos") {
     if (obstaculos_restantes > 0) {
         // Criar um subgrupo de obstáculos
         for (var _i = 0; _i < subgrupo_tamanho / 2; _i++) {
-            var _tipo_obstaculo = choose(obj_asteroide, obj_bola_fogo, obj_bola_gelo);
+            var _tipo_obstaculo = choose(obj_asteroid, obj_fireball, obj_iceball);
             instance_create_layer(irandom_range(50, display_get_width() - 50), -50, "Obstaculos", _tipo_obstaculo);
         }
         obstaculos_restantes -= subgrupo_tamanho / 2;
@@ -49,10 +49,10 @@ if (estado == "onda_inimigos") {
                 instance_create_layer(_pos_x, _pos_y, "Inimigos", obj_inimigo2);
             }
         }
-        inimigos_restantes -= num_inimigos;
+        inimigos_restantes -= _num_inimigos;
     }
 }
-alarm[0] = 500;  // Reativar alarme com intervalo ajustado
+alarm[0] = 100;  // Reativar alarme com intervalo ajustado
 
 
 
