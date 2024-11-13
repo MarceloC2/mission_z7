@@ -1,13 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_powerup_firepower",
+  "%Name":"obj_powerup_firepower2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_powerup_firepower",
+  "name":"obj_powerup_firepower2",
   "overriddenProperties":[],
   "parent":{
     "name":"Objetos",
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_powerup_firepower",
-    "path":"sprites/spr_powerup_firepower/spr_powerup_firepower.yy",
+    "name":"spr_jogo_lento",
+    "path":"sprites/spr_jogo_lento/spr_jogo_lento.yy",
   },
   "spriteMaskId":null,
   "visible":true,

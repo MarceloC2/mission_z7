@@ -78,6 +78,14 @@ if (device_mouse_check_button(0, mb_left) && nave_selecionada) {
     if (pode_disparar) {
         var tiro = instance_create_layer(x, y - 115, "Tiro", obj_tiro);
         tiro.poder = global.poder_tiro; // Ajustar poder do tiro
+        
+        // Ajustar o frame do tiro conforme o poder do tiro
+        if (global.poder_tiro == 2) {
+            tiro.image_index = 1; // Usar o segundo frame para o tiro poderoso
+        } else {
+            tiro.image_index = 0; // Usar o primeiro frame para o tiro normal
+        }
+        
         pode_disparar = false;
         alarm[0] = 10;  // Ajuste o tempo de recarga conforme necessário
     }
@@ -85,8 +93,9 @@ if (device_mouse_check_button(0, mb_left) && nave_selecionada) {
     nave_selecionada = false;
 }
 
+
 // Desacelerar jogo quando não houver toque
-if (!device_mouse_check_button(0, mb_left)) {
+if (!device_mouse_check_button(0, mb_left )&& global.funcao_jogo_lento) {
     global.jogo_lento = true;
 } else {
     global.jogo_lento = false;
@@ -108,28 +117,24 @@ if (global.vida_player < 0.8) {
     }
 }
 
-// Ativar escudo após eliminar 50 inimigos
-if (global.inimigos_destruidos >= 50 && !global.escudo_ativo) {
+// Ativar escudo após eliminar 60 inimigos
+if (global.inimigos_destruidos >= 60 && global.inimigos_destruidos <= 80) {
     global.escudo_ativo = true;
-    tempo_escudo = 30 * room_speed; // Escudo dura 30 segundos
     sprite_index = spr_player_escudo; // Mudar aparência da nave para indicar escudo ativo
+} else {
+    global.escudo_ativo = false;
+    sprite_index = spr_player1; // Restaurar aparência da nave para indicar escudo desativado
 }
 
-// Reduzir o tempo do escudo ativo
-if (global.escudo_ativo) {
-    tempo_escudo --;
-    if (tempo_escudo <= 0) {
-        global.escudo_ativo = false;
-        sprite_index = spr_player1; // Restaurar aparência da nave
-    }
-}
 
 // Verificar se o jogador coletou um bônus de poder de fogo
 if (place_meeting(x, y, obj_powerup_firepower)) {
     global.poder_tiro = 2; // Aumentar poder de fogo
-    obj_tiro.sprite_index = spr_tiro_poderoso; // Alterar aparência do tiro
     instance_destroy(obj_powerup_firepower);
 }
+
+
+
 
 // Criando rastro
 //instance_create_layer(x, y, layer, obj_player_rastro);

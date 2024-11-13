@@ -12,9 +12,6 @@ alarm[0] = 1;  // Temporizador para a criação de subgrupos ou obstáculos
 */
 
 
-
-
-
 alarm[0] = 1;  // Temporizador para a criação de subgrupos ou obstáculos
 estado = "onda_inimigos";  // Estado inicial
 wave_count = 0;
@@ -32,3 +29,4 @@ obstaculos_restantes = 5;
 
 global.pausado = false; // Para garantir que a variável esteja inicializada
 global.player_poder_fogo = 1;  // Poder inicial da arma do jogador
+

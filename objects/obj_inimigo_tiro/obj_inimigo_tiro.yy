@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_particula",
-    "path":"sprites/spr_particula/spr_particula.yy",
+    "name":"spr_tinimigo_tiro",
+    "path":"sprites/spr_tinimigo_tiro/spr_tinimigo_tiro.yy",
   },
   "spriteMaskId":null,
   "visible":true,

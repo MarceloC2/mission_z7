@@ -144,6 +144,15 @@ function executar_acao_menu() {
 			global.pontos = 0;  // Inicializar pontos
 			room_goto(rm_menu)
 		break;
-		
+		case 8:
+		global.funcao_jogo_lento= !global.funcao_jogo_lento;
+		show_message("Modo jogo lento!");
+		/*
+		if (global.funcao_jogo_lento){
+			global.funcao_jogo_lento = false;
+		}else{
+			global.funcao_jogo_lento = true;
+		}
+		*/
     }
 }

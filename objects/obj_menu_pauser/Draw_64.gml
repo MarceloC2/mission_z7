@@ -34,11 +34,19 @@ function desenhar_menu() {
                 } else {
                     draw_sprite(menu[_i].sprite, 0, menu[_i].pos_x, menu[_i].pos_y);
                 }
-            } else {
-                draw_sprite(menu[_i].sprite, _index, menu[_i].pos_x, menu[_i].pos_y);
-            }
+            } else if (_i == 7) {
+				if (global.funcao_jogo_lento) {
+				    draw_sprite(menu[_i].sprite, 0, menu[_i].pos_x, menu[_i].pos_y);
+				} else {
+				    draw_sprite(menu[_i].sprite, 1, menu[_i].pos_x, menu[_i].pos_y);
+				}
+			}else{
+	            draw_sprite(menu[_i].sprite, _index, menu[_i].pos_x, menu[_i].pos_y);
+				}
+			}
+			
         }
-    }
+    
 }
 
 // Desenhar todos os itens do menu

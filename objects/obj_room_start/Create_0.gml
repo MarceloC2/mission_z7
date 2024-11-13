@@ -6,7 +6,7 @@ global.jogo_lento = false;
 global.vida_player = 1;  // Vida começa com 100%
 global.inimigos_destruidos = 0;
 global.pontos = 0;  // Inicializar pontos
-
+global.funcao_jogo_lento = true; //essa irá controlar o uso do jogo lento
 
 
 /*
