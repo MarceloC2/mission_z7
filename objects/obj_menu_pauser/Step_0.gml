@@ -1,7 +1,7 @@
 // No evento Step
 global.largura_tela = room_width; // display_get_gui_width();
 global.altura_tela = room_height; // display_get_gui_height();
-global.altura_item = 70; // Altura de cada item do menu
+global.altura_item = 42; // Altura de cada item do menu
 global.y_inicial =  global.altura_tela / 1.8 - (array_length(menu) * global.altura_item) / 2;
 
 function verificar_interacao(_mouse_x, _mouse_y) {
@@ -59,7 +59,7 @@ if (menu == menu_configuracao) {
     //var _mouse_y = device_mouse_y_to_gui(0);
 
     global.barra_som_x = (global.largura_tela - global.volume_som_barra_largura) / 2;
-    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 352;
+    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 250;
 
     if (_mouse_x > global.barra_som_x && _mouse_x < global.barra_som_x + global.volume_som_barra_largura &&
         _mouse_y > global.barra_som_y && _mouse_y < global.barra_som_y + 12) {
@@ -68,7 +68,7 @@ if (menu == menu_configuracao) {
     }
 
     global.barra_musica_x = (global.largura_tela - global.volume_musica_barra_largura) / 2;
-    global.barra_musica_y = global.barra_som_y + 60;
+    global.barra_musica_y = global.barra_som_y + 99;
 
     if (_mouse_x > global.barra_musica_x && _mouse_x < global.barra_musica_x + global.volume_musica_barra_largura &&
         _mouse_y > global.barra_musica_y && _mouse_y < global.barra_musica_y + 29) {
@@ -80,18 +80,31 @@ if (menu == menu_configuracao) {
 
 
 function mostrar_configuracoes() {
+    with (jogo_lento) {
+        visible = true;
+    }
+	
+	with (botao_mute) {
+        visible = true;
+    }
     menu = menu_configuracao;
     atual = 0;
-	
-
 }
+
 
 
 function esconder_configuracoes() {
+    with (jogo_lento) {
+        visible = false;
+    }
+	
+	with (botao_mute) {
+        visible = true;
+    }
     menu = inicio_menu;
     atual = 0;
-    
 }
+    
 
 
 function executar_acao_menu() {
@@ -112,30 +125,8 @@ function executar_acao_menu() {
             esconder_configuracoes();
 			global.pausado = !global.pausado;
             break;
+		
 		case 6:
-			if (global.som && global.musica) {
-                show_message("Modo Silencioso Ativado!");
-                //obj_som.toggle_som(snd_tiro_laser, "pause");
-                obj_som.toggle_musica(snd_music_sobrevivencia, "pause");
-                global.som = false;
-                global.musica = false;
-				
-				//show_message("Global musica: " + string(global.musica) + " Global som:" + string(global.som));
-                // Atualizar frame do icon_br_som
-                //spr_icon_audio.image_index = 2; // Supondo que 2 é o frame desejado
-            } else {
-                show_message("Modo Silêncioso Desativado!");
-                obj_som.toggle_som(snd_tiro_laser, "play");
-                obj_som.toggle_musica(snd_music_sobrevivencia, "play");
-                global.som = true;
-                global.musica = true;
-				
-
-                // Atualizar frame do icon_br_som
-                //spr_icon_audio.image_index = 0; // Supondo que 1 é o frame desejado
-            }
-		break;
-		case 7:
 			if (global.musica){
 			obj_som.toggle_musica(snd_music_sobrevivencia,"pause");
 			obj_som.toggle_musica(snd_music_menu,"play");}
@@ -145,14 +136,6 @@ function executar_acao_menu() {
 			room_goto(rm_menu)
 		break;
 		case 8:
-		global.funcao_jogo_lento= !global.funcao_jogo_lento;
-		show_message("Modo jogo lento!");
-		/*
-		if (global.funcao_jogo_lento){
-			global.funcao_jogo_lento = false;
-		}else{
-			global.funcao_jogo_lento = true;
-		}
-		*/
+		
     }
 }

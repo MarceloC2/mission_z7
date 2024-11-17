@@ -7,7 +7,7 @@ if (global.musica) {
 // No evento Step
 global.largura_tela = room_width; // display_get_gui_width();
 global.altura_tela = room_height; // display_get_gui_height();
-global.altura_item = 70; // Altura de cada item do menu
+global.altura_item = 58; // Altura de cada item do menu
 global.y_inicial =  global.altura_tela / 1.8 - (array_length(menu) * global.altura_item) / 2;
 
 function verificar_interacao(_mouse_x, _mouse_y) {
@@ -66,16 +66,16 @@ if (menu == menu_configuracao) {
     //var _mouse_y = device_mouse_y_to_gui(0);
 
     global.barra_som_x = (global.largura_tela - global.volume_som_barra_largura) / 2;
-    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 85;
+    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 260;
 
     if (_mouse_x > global.barra_som_x && _mouse_x < global.barra_som_x + global.volume_som_barra_largura &&
-        _mouse_y > global.barra_som_y && _mouse_y < global.barra_som_y + 12) {
+        _mouse_y > global.barra_som_y && _mouse_y < global.barra_som_y + 100) {
         global.volume_som = (_mouse_x - global.barra_som_x) / global.volume_som_barra_largura;
         obj_som.ajustar_volume_som(snd_select_menu, global.volume_som);
     }
 
     global.barra_musica_x = (global.largura_tela - global.volume_musica_barra_largura) / 2;
-    global.barra_musica_y = global.barra_som_y + 60;
+    global.barra_musica_y = global.barra_som_y + 99;
 
     if (_mouse_x > global.barra_musica_x && _mouse_x < global.barra_musica_x + global.volume_musica_barra_largura &&
         _mouse_y > global.barra_musica_y && _mouse_y < global.barra_musica_y + 29) {
@@ -94,6 +94,10 @@ function mostrar_configuracoes() {
     with (obj_logo) {
         visible = false;
     }
+
+	 with (botao_mute){
+        visible = false;
+    }
     
 }
 
@@ -107,6 +111,9 @@ function esconder_configuracoes() {
         visible = true;
     }
     
+	with (botao_mute){
+        visible = true;
+    }
 }
 
 
@@ -132,33 +139,10 @@ function executar_acao_menu() {
 		case 5:
             mostrar_configuracoes();
             break;
-        case 6:
-			 if (global.som && global.musica) {
-                //show_message("Pausando - Som: " + string(global.som) + "\nMúsica: " + string(global.musica));
-				show_message("Modo Silencioso Ativado!");
-                obj_som.toggle_som(snd_select_menu, "pause");
-                obj_som.toggle_musica(snd_music_menu, "pause");
-                global.som = false;
-                global.musica = false;
-				
-
-                // Atualizar frame do icon_br_som
-                //spr_icon_audio.image_index = 3; // Supondo que 2 é o frame desejado
-            } else {
-                show_message("Modo Silêncioso Desativado!");
-                obj_som.toggle_som(snd_select_menu, "play");
-                obj_som.toggle_musica(snd_music_menu, "play");
-                global.som = true;
-                global.musica = true;
-				
-
-                // Atualizar frame do icon_br_som
-                //spr_icon_audio.image_index = 0; // Supondo que 1 é o frame desejado
-            }
-            break;
-        
-        case 9:
-            esconder_configuracoes();
+      
+        case 8:
+            //esconder_configuracoes()
+			room_goto(rm_menu)
             break;
         
     }

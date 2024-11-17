@@ -9,6 +9,9 @@ if (y > room_height + 50) {
 	    instance_create_layer(x, y, layer, obj_particula);
 	}
 }
+//criando a explosão
+instance_create_layer(x,y,"efeitos",obj_explosao);
+
 
 // Atualizar pontuação ou outro feedback
 global.inimigos_destruidos += 1;

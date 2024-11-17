@@ -28,6 +28,7 @@ if (!global.pausado) {
             var obstacle_type = choose(obj_asteroid, obj_fireball, obj_iceball);
             var obstacle = instance_create_layer(random_range(0, room_width), -32, "Obstacles", obstacle_type);
             obstacle.speed = global.jogo_lento && global.funcao_jogo_lento ? obstacle.default_speed * 0.5 : obstacle.default_speed;
+			
         }
     }
 

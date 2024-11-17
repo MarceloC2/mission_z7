@@ -17,9 +17,9 @@ estado = "onda_inimigos";  // Estado inicial
 wave_count = 0;
 inimigos_restantes = 10;  // Total de inimigos na primeira onda
 
-max_enemies_wave1 = 30;
+max_enemies_wave1 = 3;
 enemies_per_block_wave1 = 5;
-max_enemies_wave2 = 20; // Total de inimigos na segunda onda
+max_enemies_wave2 = 2; // Total de inimigos na segunda onda
 enemies_per_block_wave2 = 4; // Número de inimigos por bloco na segunda onda
 subgrupo_tamanho = 5;
 enemy_block_count = 0;

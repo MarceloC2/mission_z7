@@ -11,7 +11,7 @@ if (global.pausado) {
 if (global.jogo_lento) {
     speed = (0.5 + global.level) * 0.1; // Reduz a velocidade para 10%
 } else {
-    speed = 0.3 + global.level;
+    speed = 0.1 + global.level;
 }
 
 // Lógica normal do jogo

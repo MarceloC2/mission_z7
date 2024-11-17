@@ -76,4 +76,3 @@ function toggle_musica(_musica, _acao) {
         }
     }
 }
-
