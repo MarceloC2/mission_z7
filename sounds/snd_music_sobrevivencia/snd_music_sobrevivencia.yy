@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":59.115093,
+  "duration":123.27181,
   "name":"snd_music_sobrevivencia",
   "parent":{
     "name":"Sons",

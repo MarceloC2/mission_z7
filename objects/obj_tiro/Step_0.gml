@@ -9,7 +9,7 @@ if (global.pausado) {
 
 // Desacelerar jogo quando não houver toque
 if (global.jogo_lento) {
-    speed = saved_speed * 0.1; // Reduz a velocidade para 10%
+    speed = saved_speed * 0.5; // Reduz a velocidade para 50%
 } else {
     speed = saved_speed;
 }

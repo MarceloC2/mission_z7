@@ -120,7 +120,11 @@ function esconder_configuracoes() {
 function executar_acao_menu() {
     switch (menu[atual].id) {
         case 1:
-            room_goto(rm_missao1)
+			if (global.musica){
+				obj_som.toggle_musica(snd_music_menu,"pause");
+				obj_som.toggle_musica(snd_music_intro,"play");
+			}
+            room_goto(rm_intro_missao)
             break;
         case 2:
 			if (global.musica){

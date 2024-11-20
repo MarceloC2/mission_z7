@@ -10,7 +10,7 @@ wave_count = 0; // Inicialize a variável wave_count com um valor apropriado
 
 // Inicializando o escudo do jogador
 global.escudo_ativo = false;
-tempo_escudo = 0;
+global.tempo_escudo = 0;
 
 // Inicializando o poder de fogo do jogador
 global.poder_tiro = 1; // Poder de fogo básico

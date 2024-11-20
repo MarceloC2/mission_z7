@@ -99,7 +99,7 @@ function esconder_configuracoes() {
     }
 	
 	with (botao_mute) {
-        visible = true;
+        visible = false;
     }
     menu = inicio_menu;
     atual = 0;
@@ -130,7 +130,8 @@ function executar_acao_menu() {
 			if (global.musica){
 			obj_som.toggle_musica(snd_music_sobrevivencia,"pause");
 			obj_som.toggle_musica(snd_music_menu,"play");}
-			global.vida_player = 1;  // Vida começa com 100%
+			global.pausado = false;
+			global.vida_player = 100;  // Vida começa com 100%
 			global.inimigos_destruidos = 0;
 			global.pontos = 0;  // Inicializar pontos
 			room_goto(rm_menu)
