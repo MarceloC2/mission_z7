@@ -1,2 +1,2 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
+global.poder_tiro = 2; // Aumentar poder de fogo
+instance_destroy(obj_powerup_firepower);

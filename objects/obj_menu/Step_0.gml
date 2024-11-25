@@ -1,14 +1,11 @@
-//obj_som.tocar_musica(snd_music_menu);
-//obj_som.toggle_som(snd_select_menu,"Play");
-if (global.musica) {
-    obj_som.toggle_musica(snd_music_menu,"play");
-}
-
-// No evento Step
 global.largura_tela = room_width; // display_get_gui_width();
 global.altura_tela = room_height; // display_get_gui_height();
 global.altura_item = 58; // Altura de cada item do menu
 global.y_inicial =  global.altura_tela / 1.8 - (array_length(menu) * global.altura_item) / 2;
+
+if (global.musica) { 
+	obj_som.toggle_musica(snd_music_menu, "play");  
+}
 
 function verificar_interacao(_mouse_x, _mouse_y) {
     for (var _i = 0; _i < array_length(menu); _i++) {

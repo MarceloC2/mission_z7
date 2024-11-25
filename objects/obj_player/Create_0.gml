@@ -1,5 +1,5 @@
 // Inicializando variáveis
-alarm[0] = 10;  // Ajuste o tempo de recarga conforme necessário
+//alarm[0] = 50;  // Ajuste o tempo de recarga conforme necessário
 randomize();  // forçar mudança de seed para diversificar as ações do jogo
 pode_disparar = true;
 nave_selecionada = false;
@@ -16,3 +16,4 @@ global.tempo_escudo = 0;
 global.poder_tiro = 1; // Poder de fogo básico
 
 
+nave_controlada = true; // Variável que indica se a nave está sob controle do jogador

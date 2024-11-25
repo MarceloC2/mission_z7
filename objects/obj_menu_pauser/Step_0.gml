@@ -112,6 +112,7 @@ function executar_acao_menu() {
         case 1:
             mostrar_configuracoes();
 			global.pausado = !global.pausado;
+			
         case 2:
 			
             break;
@@ -127,13 +128,16 @@ function executar_acao_menu() {
             break;
 		
 		case 6:
-			if (global.musica){
 			obj_som.toggle_musica(snd_music_sobrevivencia,"pause");
-			obj_som.toggle_musica(snd_music_menu,"play");}
-			global.pausado = false;
+			if (global.musica){
+				//obj_som.toggle_musica(snd_music_menu,"play");
+			}
+			resetar_jogo();
+			/*global.pausado = false;
 			global.vida_player = 100;  // Vida começa com 100%
 			global.inimigos_destruidos = 0;
 			global.pontos = 0;  // Inicializar pontos
+			*/
 			room_goto(rm_menu)
 		break;
 		case 8:

@@ -1,4 +1,4 @@
-// Evento Step do obj_gameOver
+
 
 function verificar_interacao(_mouse_x, _mouse_y) {
     for (var _i = 0; _i < array_length(menu_resposta); _i++) {

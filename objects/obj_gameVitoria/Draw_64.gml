@@ -1,15 +1,29 @@
-// Evento Draw GUI do obj_gameOver
+// TITULO VITORIA
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_set_font(fnt_titulos);
+draw_text(210, 90, string("PARABÉNS"));
+// Redefinir para a fonte padrão 
+draw_set_font(-1); // -1 define a fonte padrão
 
+draw_sprite(spr_estatistica,0,224,535);
 // Desenhar as estatísticas
 draw_set_color(c_white);
 draw_set_halign(fa_right);
 draw_set_font(fnt_estatisticas);
-draw_text(400, 700, "Estatísticas do Jogo");
-draw_text(400, 740, "Pontuação: " + string(global.pontos));
-draw_text(400, 780, "Inimigos Destruídos: " + string(global.inimigos_destruidos));
-draw_text(400, 820, "Obstáculos Destruídos: " + string(global.obstaculos_destruidos));
+draw_text(232, 340, string(global.nivel_inimigo));
+draw_text(126, 435, string(global.inimigos_destruidos));
+draw_text(240, 435, string(global.pontos));
+draw_text(345, 435, string(global.obstaculos_destruidos));
 
+// QUESTIONAMENTO VITORIA
+draw_set_color(c_red);
+draw_set_halign(fa_center);
+draw_set_font(fnt_sub_titulo);
 
+draw_text(215, 600, string("Jogar Novamente?"));
+// Redefinir para a fonte padrão 
+draw_set_font(-1);
 function desenhar_menu() {
     for (var _i = 0; _i < array_length(menu_resposta); _i++) {
         if (menu_resposta[_i].visivel) {

@@ -2,9 +2,9 @@
 // Você pode escrever seu código neste editor
 //image_index = 0;
 image_alpha = 0.6;
-/*
-if (global.som){
-    image_index = 1;
-} else {
+
+if (global.som && global.musica) {
     image_index = 0;
-}*/
+} else {
+    image_index = 2;
+}

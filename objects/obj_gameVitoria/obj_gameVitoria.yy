@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_gameVitoria",
-    "path":"sprites/spr_gameVitoria/spr_gameVitoria.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

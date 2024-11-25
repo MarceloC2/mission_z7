@@ -15,35 +15,9 @@ if (global.jogo_lento) {
 }
 
 // Destruir tiro para limpar memória
-if (y < -90) {
-    instance_destroy();
+
+if (y < 0) {
+    instance_destroy(); // Destroi o tiro se ele sair da tela
 }
 
 
-
-
-/*
-// Verifica se o jogo está pausado
-if (global.pausado) {
-    if (speed != 0) { 
-        saved_speed = speed;
-        saved_direction = direction;
-        speed = 0;
-        direction = 0;
-    }
-    exit;
-} else {
-    if (speed == 0) {
-        speed = saved_speed;
-        direction = saved_direction;
-    }
-}
-
-
-
-
-//Destruir tiro para limpar memória. eliminar objeto depois que sai da tela
-if (y < -90){
-	instance_destroy();
-}
-*/

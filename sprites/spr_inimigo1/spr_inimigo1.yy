@@ -23,7 +23,7 @@
   ],
   "name":"spr_inimigo1",
   "nineSlice":null,
-  "origin":3,
+  "origin":4,
   "parent":{
     "name":"inimigos",
     "path":"folders/Sprites/inimigos.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":42,
     "yorigin":44,
   },
   "swatchColours":null,

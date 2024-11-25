@@ -37,17 +37,26 @@ function executar_acao_menu() {
 	resetar_jogo();
     switch (menu_resposta[atual].id) {
         case 1:
-            room_goto(rm_sobrevivencia);
+			if (global.musica){
+					obj_som.toggle_musica(snd_vitoria,"pause");
+					obj_som.toggle_musica(snd_music_sobrevivencia,"play");
+					}
+			resetar_jogo();
+			room_goto(rm_sobrevivencia);
+		
             break;
         case 2:
-            if (global.musica) {
-                obj_som.toggle_musica(snd_music_sobrevivencia, "pause");
-            }
-            room_goto(rm_menu);
+			if (global.musica){
+				obj_som.toggle_musica(snd_vitoria,"pause");
+				//obj_som.toggle_musica(snd_music_menu,"play");
+				}
+			resetar_jogo();
+			room_goto(rm_menu);
+            
             break;
     }
 }
-VERIFICAR O CONTROLE DE SOM ENTRE ENTRADAS E SAIDAS DAS ROOMS
+
 // Verificar interação ao clicar
 if (mouse_check_button_pressed(mb_left)) {
     verificar_interacao(_mouse_x, _mouse_y);

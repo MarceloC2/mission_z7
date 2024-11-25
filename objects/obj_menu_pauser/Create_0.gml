@@ -8,7 +8,7 @@ botao_mute = instance_create_layer(400, 840, "Instances", obj_bt_audio_menu_prin
 botao_mute.visible = false; // Inicialmente invisível
 
 // Criando as estruturas do menu com sprites
-opcao1 = { sprite: spr_pause_button, id: 1, visivel: true, pos_x: 385, pos_y: 15 };
+opcao1 = { sprite: spr_pause_button, id: 1, visivel: true, pos_x: 385, pos_y: 25 };
 opcao2 = { sprite: spr_pause_menu, id: 2, visivel: true, pos_x: 35, pos_y: 160 };
 opcao3 = { sprite: spr_som, id: 3, visivel: true, pos_x: 100, pos_y: 360 };
 opcao4 = { sprite: spr_musica, id: 4, visivel: true, pos_x: 100, pos_y: 460 };

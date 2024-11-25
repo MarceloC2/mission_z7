@@ -1,7 +1,7 @@
 // Evento Create do obj_inimigos
 if (global.nivel_inimigo == 1) {
     resistencia = 1;
-    velocidade = 3;
+    velocidade = 5;
     atira = false;
     sprite_index = spr_inimigo1;
 } else if (global.nivel_inimigo == 2) {
