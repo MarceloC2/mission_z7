@@ -1,23 +1,3 @@
-
-/*
-switch (global.tipo_obstaculo) {
-    case 1: // Cometa
-        sprite_index = spr_cometa;
-        velocidade = 4 + random(3);
-        break;
-    case 2: // Lixo Espacial
-        sprite_index = spr_lixo_espacial;
-        velocidade = 3 + random(2);
-        break;
-    case 3: // Asteroide
-        sprite_index = spr_asteroide;
-        velocidade = 2 + random(1);
-        break;
-}
-velocidade_original = velocidade; // Armazenando a velocidade original para uso na tela lenta
-*/
-
-
 if (global.tipo_obstaculo == 1) {
     sprite_index = spr_cometa;
     velocidade = 2 + random(3);

@@ -1,21 +1,3 @@
-// Movimento dos obstáculos no evento Step
-/*
-if (!global.pausado) {
-    if (global.funcao_jogo_lento && !device_mouse_check_button(0, mb_left)) {
-        y += velocidade_original * 0.6; // Reduzir a velocidade pela metade
-    } else {
-        y += velocidade_original; // Usar a velocidade original
-    }
-
-
-    // Verificar colisão com os tiros do jogador
-    if (place_meeting(x, y, obj_tiro)) {
-        instance_destroy(); // Destruir o obstáculo
-        with (other) { instance_destroy(); } // Destruir o tiro do jogador
-    }
-}
-*/
-
 // Evento Step do obj_obstaculos
 if (!global.pausado) {
     if (global.funcao_jogo_lento && !device_mouse_check_button(0, mb_left)) {

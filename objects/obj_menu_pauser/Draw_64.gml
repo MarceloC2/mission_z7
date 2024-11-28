@@ -4,6 +4,9 @@ draw_set_alpha(1);
 // Desenhar a imagem de fundo somente se o menu de configuração estiver visível
 if (menu == menu_configuracao) {
     draw_sprite(fundo_sprite, 0, 0, 0); // Ajuste a posição (x, y) conforme necessário
+	draw_sprite(spr_pause_menu,0,35,160);
+	draw_sprite(spr_som,0,100,360);
+	draw_sprite(spr_musica,0,100,460);
 
     // Desenhar barras de volume somente se as opções de volume estiverem visíveis
     draw_roundrect_colour(global.barra_som_x + 25, global.barra_som_y, 

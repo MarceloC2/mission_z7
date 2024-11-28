@@ -16,6 +16,12 @@ draw_text(126, 435, string(global.inimigos_destruidos));
 draw_text(240, 435, string(global.pontos));
 draw_text(345, 435, string(global.obstaculos_destruidos));
 
+// Desenhar a melhor pontuação 
+draw_set_color(c_yellow); 
+draw_set_halign(fa_center);
+//MELHOR PONTUAÇÃO
+draw_text(200, 200, "Melhor Pontuação: " + string(global.melhor_pontuacao));
+
 // QUESTIONAMENTO VITORIA
 draw_set_color(c_red);
 draw_set_halign(fa_center);

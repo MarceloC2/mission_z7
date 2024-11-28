@@ -63,7 +63,7 @@ if (menu == menu_configuracao) {
     //var _mouse_y = device_mouse_y_to_gui(0);
 
     global.barra_som_x = (global.largura_tela - global.volume_som_barra_largura) / 2;
-    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 260;
+    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 172;
 
     if (_mouse_x > global.barra_som_x && _mouse_x < global.barra_som_x + global.volume_som_barra_largura &&
         _mouse_y > global.barra_som_y && _mouse_y < global.barra_som_y + 100) {
@@ -72,7 +72,7 @@ if (menu == menu_configuracao) {
     }
 
     global.barra_musica_x = (global.largura_tela - global.volume_musica_barra_largura) / 2;
-    global.barra_musica_y = global.barra_som_y + 99;
+    global.barra_musica_y = global.barra_som_y + 100;
 
     if (_mouse_x > global.barra_musica_x && _mouse_x < global.barra_musica_x + global.volume_musica_barra_largura &&
         _mouse_y > global.barra_musica_y && _mouse_y < global.barra_musica_y + 29) {
@@ -132,7 +132,7 @@ function executar_acao_menu() {
             room_goto(rm_sobrevivencia);
             break;
         case 3:
-            show_message("Créditos: Equipe Cest");
+            room_goto(rm_creditos)
             break;
         case 4:
             game_end();
@@ -141,7 +141,7 @@ function executar_acao_menu() {
             mostrar_configuracoes();
             break;
       
-        case 8:
+        case 6:
             //esconder_configuracoes()
 			room_goto(rm_menu)
             break;

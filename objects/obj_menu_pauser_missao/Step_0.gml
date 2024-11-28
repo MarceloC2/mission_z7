@@ -50,8 +50,9 @@ for (var _i = 0; _i < array_length(menu); _i++) {
 
 // Verificar ajuste de volume pelo mouse ou toque na barra de som (específico para configuração)
 if (menu == menu_configuracao) {
+	
     global.barra_som_x = (global.largura_tela - global.volume_som_barra_largura) / 2;
-    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 250;
+    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 205;
 
     if (_mouse_x > global.barra_som_x && _mouse_x < global.barra_som_x + global.volume_som_barra_largura &&
         _mouse_y > global.barra_som_y && _mouse_y < global.barra_som_y + 12) {
@@ -92,19 +93,10 @@ function executar_acao_menu() {
             global.pausado = !global.pausado;
             break;
         case 2:
-            // Ações do botão 2
-            break;
-        case 3:
-            // Ações do botão 3
-            break;
-        case 4:
-            // Ações do botão 4
-            break;
-        case 5:
             esconder_configuracoes();
             global.pausado = !global.pausado;
             break;
-        case 6:
+        case 3:
             if (global.musica) {
                 //obj_som.toggle_musica(global., "pause");
                 obj_som.toggle_musica(snd_music_menu, "play");
@@ -112,10 +104,9 @@ function executar_acao_menu() {
            if (global.musica){
 				obj_som.toggle_musica(snd_missao,"pause");
 			}
+			global.pausado = false;
             room_goto(rm_mapa_missao); // Volta ao mapa de missões
             break;
-        case 8:
-            // Ações do botão 8
-            break;
+        
     }
 }

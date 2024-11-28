@@ -46,6 +46,8 @@ if (linha_atual < 4) {
     alarm[0] = 5; // Ajuste o tempo conforme necessário
 } else {
     // Todas as naves foram criadas
+    
     self.todas_naves_criadas = true;
-    //show_debug_message("Todas as naves da onda " + string(self.onda_atual) + " foram criadas.");
+    // Inicializa a nave do jogador
+    instance_create_layer(room_width / 2, room_height - 100, "Instances", obj_player_mission);
 }

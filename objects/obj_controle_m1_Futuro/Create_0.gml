@@ -16,4 +16,4 @@ self.todas_naves_criadas = false; // Variável para rastrear se todas as naves f
 alarm[0] = 10; // Ajuste o tempo conforme necessário para a primeira nave
 
 botao_mute = instance_create_layer(400, 10, "Instances", obj_menu_pauser_missao);
-painel = instance_create_layer(1, 1, "Instances", obj_painel_missao);
+painel = instance_create_layer(1, 1, "Instances", obj_painel);

@@ -1,5 +1,3 @@
-// Evento Alarm 0 do controlador
-
 // Parar todos os sons
 audio_stop_all();
 
@@ -14,6 +12,6 @@ if (global.musica){
 with (obj_player) {
     instance_create_layer(x, y, "Instances", obj_escudo);
 }
-
+	
 // Mudar para a sala de vitória
 room_goto(rm_vitoria);

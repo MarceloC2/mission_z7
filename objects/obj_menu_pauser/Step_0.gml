@@ -59,7 +59,7 @@ if (menu == menu_configuracao) {
     //var _mouse_y = device_mouse_y_to_gui(0);
 
     global.barra_som_x = (global.largura_tela - global.volume_som_barra_largura) / 2;
-    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 250;
+    global.barra_som_y = global.y_inicial + global.altura_item * array_length(menu) - 185;
 
     if (_mouse_x > global.barra_som_x && _mouse_x < global.barra_som_x + global.volume_som_barra_largura &&
         _mouse_y > global.barra_som_y && _mouse_y < global.barra_som_y + 12) {
@@ -112,22 +112,13 @@ function executar_acao_menu() {
         case 1:
             mostrar_configuracoes();
 			global.pausado = !global.pausado;
-			
-        case 2:
-			
-            break;
-        case 3:
-            
-            break;
-        case 4:
-            
-            break;
-		case 5:
+			break;
+		case 2:
             esconder_configuracoes();
 			global.pausado = !global.pausado;
             break;
 		
-		case 6:
+		case 3:
 			obj_som.toggle_musica(snd_music_sobrevivencia,"pause");
 			if (global.musica){
 				//obj_som.toggle_musica(snd_music_menu,"play");
@@ -140,7 +131,6 @@ function executar_acao_menu() {
 			*/
 			room_goto(rm_menu)
 		break;
-		case 8:
 		
     }
 }

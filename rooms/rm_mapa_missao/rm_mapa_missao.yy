@@ -6,11 +6,11 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
+    {"name":"inst_553945B4","path":"rooms/rm_mapa_missao/rm_mapa_missao.yy",},
     {"name":"inst_1316D052","path":"rooms/rm_mapa_missao/rm_mapa_missao.yy",},
     {"name":"inst_52666A52","path":"rooms/rm_mapa_missao/rm_mapa_missao.yy",},
     {"name":"inst_2DC80F26","path":"rooms/rm_mapa_missao/rm_mapa_missao.yy",},
     {"name":"inst_2BD130D2","path":"rooms/rm_mapa_missao/rm_mapa_missao.yy",},
-    {"name":"inst_553945B4","path":"rooms/rm_mapa_missao/rm_mapa_missao.yy",},
   ],
   "isDnd":false,
   "layers":[

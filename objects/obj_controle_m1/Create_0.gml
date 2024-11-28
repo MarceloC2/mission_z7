@@ -16,14 +16,17 @@ self.todas_naves_criadas = false; // Variável para rastrear se todas as naves f
 self.onda_atual = 1; // Onda inicial
 self.total_ondas = 6; // Total de ondas
 
-alarm[0] = 10; // Ajuste o tempo conforme necessário para a primeira nave
+alarm[0] = 30; // Ajuste o tempo conforme necessário para a primeira nave
 
 botao_mute = instance_create_layer(400, 10, "Instances", obj_menu_pauser_missao);
-painel = instance_create_layer(1, 1, "Instances", obj_painel_missao);
+painel = instance_create_layer(1, 1, "Instances", obj_painel);
 
 // Inicializa a nave do jogador
-instance_create_layer(room_width / 2, room_height - 50, "Instances", obj_player_mission);
+//instance_create_layer(room_width / 2, room_height - 50, "Instances", obj_player_mission);
 
 
 
 global.eliminacoes_circular = 0; // Inicializa a contagem de eliminações
+
+
+//

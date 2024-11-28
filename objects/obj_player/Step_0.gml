@@ -1,4 +1,3 @@
-
 // Verifica se o jogo está pausado
 if (global.pausado) {
     exit;
@@ -7,8 +6,6 @@ if (global.pausado) {
 // Define a margem adicional para aumentar a área de toque
 var _padding = 70; // Valor determina a área de toque da nave do player
 
-// Evento Step do obj_player
-// Evento Step do obj_player
 
 if (nave_controlada) {
     // Verificar se a nave foi selecionada
@@ -68,33 +65,6 @@ if (!device_mouse_check_button(0, mb_left )&& global.funcao_jogo_lento) {
     global.jogo_lento = false;
 }
 
-/*
-// Verificar se o jogador coletou um bônus de poder de fogo
-if (place_meeting(x, y, obj_powerup_firepower)) {
-    global.poder_tiro = 2; // Aumentar poder de fogo
-    instance_destroy(obj_powerup_firepower);
-}
-*/
-
-/*
-// Verificar vida e criar power-ups de vida
-if (global.vida_player < 40 && instance_number(obj_vida) == 0) {
-    instance_create_layer(random(room_width), -50, "Instances", obj_vida);
-}
-
-if (global.vida_player < 80 && (global.onda == 2 || global.onda == 3) && instance_number(obj_vida) == 0) {
-    instance_create_layer(random(room_width), -50, "Instances", obj_vida);
-}
-
-// Verificar colisão com power-ups de vida
-var vida_instance = instance_place(x, y, obj_vida);
-if (vida_instance != noone) {
-    global.vida_player = min(global.vida_player + 20, 100);
-    with (vida_instance) {
-        instance_destroy(); // Destruir o power-up de vida
-    }
-}
-*/
 
 // Desativar escudo após o tempo (usando alarm[1] para o escudo)
 if (alarm[1] <= 0 && global.escudo_ativo) {
@@ -109,13 +79,6 @@ if (global.tempo_escudo > 0) {
 		global.escudo_ativo = false;
 	}
 
-/*
-// Verificar colisão com inimigos e obstáculos
-if (!global.escudo_ativo) {
-    if (place_meeting(x, y, obj_inimigos) || place_meeting(x, y, obj_obstaculos)) {
-        global.vida_player -= 20; // Exemplo de dano
-    }
-}*/
 
 // Controle de disparo
 if (pode_disparar) {
@@ -123,5 +86,3 @@ if (pode_disparar) {
     pode_disparar = false;
     alarm[0] = 50; // Tempo entre os disparos
 }
-
-

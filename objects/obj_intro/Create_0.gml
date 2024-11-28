@@ -1,3 +1,7 @@
 // Evento Create do obj_intro
-frame_atual = -1;
-//image_speed = 0; // Controla a velocidade da animação (0 para manual)
+frame_atual = -1; // Frame inicial da introdução
+
+// Inicializa `global.pular` apenas se não estiver definida
+if (!variable_global_exists("pular")) {
+    global.pular = false;
+}

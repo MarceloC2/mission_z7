@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_particula",
-    "path":"sprites/spr_particula/spr_particula.yy",
+    "name":"spr_tiro_inimigo_sobrevivencia",
+    "path":"sprites/spr_tiro_inimigo_sobrevivencia/spr_tiro_inimigo_sobrevivencia.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -10,3 +10,6 @@ if (frame_atual < 3) { // Considerando que spr_intro tem 6 frames, então vai de
     }
     room_goto(rm_mapa_missao); // Vai para a sala do menu se todos os frames tiverem sido mostrados
 }
+if (global.pular){
+	room_goto(rm_mapa_missao);
+}

@@ -1,5 +1,11 @@
 // Desenhar barras de volume somente se as opções de volume estiverem visíveis
 if (menu == menu_configuracao) {
+	//Desenhar a imagem de confiruação
+	draw_sprite(spr_configuracao_menu,0,35,160);
+	draw_sprite(spr_som,0,100,360);
+	draw_sprite(spr_musica,0,100,460);
+	
+	
     // Sombra da barra (opcional, pode ser ajustada conforme necessário)
     draw_roundrect_colour(global.barra_som_x + 25, global.barra_som_y, 
         global.barra_som_x + global.volume_som_barra_largura +12, global.barra_som_y + 12, 

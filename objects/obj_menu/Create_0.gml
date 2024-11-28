@@ -4,11 +4,7 @@ opcao2 = { sprite: spr_sobrevivencia, id: 2, visivel: true, pos_x: 100, pos_y: 5
 opcao3 = { sprite: spr_credito, id: 3, visivel: true, pos_x: 100, pos_y: 620 };
 opcao4 = { sprite: spr_sair, id: 4, visivel: true, pos_x: 100, pos_y: 680 };
 opcao5 = { sprite: spr_icon_config, id: 5, visivel: true, pos_x: 45, pos_y: 860 };
-//opcao6 = { sprite: spr_icon_audio, id: 6, visivel: true, pos_x: 400, pos_y: 860 }; //x=500
-opcao6 = { sprite: spr_som, id: 6, visivel: true, pos_x: 100, pos_y: 360 };
-opcao7 = { sprite: spr_musica, id: 7, visivel: true, pos_x: 100, pos_y: 460 };
-opcao8 = { sprite: spr_voltar, id: 8, visivel: true, pos_x: 100, pos_y: 560 };
-opcao9 = { sprite: spr_configuracao_menu, id: 9, visivel: true, pos_x: 35, pos_y: 160 };
+opcao6 = { sprite: spr_voltar, id: 6, visivel: true, pos_x: 100, pos_y: 560 };
 
 
 
@@ -16,7 +12,7 @@ opcao9 = { sprite: spr_configuracao_menu, id: 9, visivel: true, pos_x: 35, pos_y
 menu_principal = [opcao1, opcao2, opcao3, opcao4, opcao5];
 
 // Menu de configurações
-menu_configuracao = [opcao6, opcao7, opcao8,opcao9];
+menu_configuracao = [opcao6];
 
 // Inicializando o menu
 menu = menu_principal;

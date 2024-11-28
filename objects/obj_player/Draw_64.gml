@@ -1,15 +1,12 @@
-// Evento Draw GUI do obj_player
-
 draw_set_color(c_white);
 draw_set_halign(fa_left);
 
 // Desenhar a pontuação no canto superior esquerdo
 draw_text(270, 30, string(global.pontos));
-//draw_text(10, 30, "Vida: " + string(global.vida_player) + "%");
-//draw_text(10, 60, "Escudo: ");
-draw_sprite(spr_painel_sobrevivencia,0,0,0);
 
+draw_sprite(spr_painel,0,0,0);
 
+// Mostrar melhor pontuação durante o jogo draw_text(100, 2, "Melhor Pontuação: " + string(global.melhor_pontuacao));
 
 // Desenhar barra de vida com cantos arredondados
 var _vida_x = 75;
@@ -35,7 +32,7 @@ if (global.escudo_ativo) {
 }
 
 
-// Informações adicionais: Total de inimigos destruídos e criados
+// Informações adicionais: Total de inimigos destruídos e criados - TESTES
 /*
 draw_text(10, 80, "Inimigos Destruídos: " + string(global.inimigos_destruidos));
 draw_text(10, 100, "Inimigos Criados: " + string(global.inimigos_criados));
