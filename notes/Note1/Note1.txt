@@ -1,3 +1,0 @@
-Controle de Criação: Adicionei uma variável margem para criar uma margem de segurança, garantindo que os inimigos sejam criados dentro da área visível.
-Coordenadas Aleatórias: Usei random_range(margem, room_width - margem) para garantir que as coordenadas x dos inimigos fiquem dentro da largura da tela. 
-Para a coordenada y, os inimigos são criados acima da tela e então descem, utilizando random_range(-50, -10).
