@@ -1,0 +1,1 @@
+//save_high_score();
